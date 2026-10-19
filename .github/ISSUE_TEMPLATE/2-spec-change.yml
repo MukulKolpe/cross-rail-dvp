@@ -1,0 +1,61 @@
+name: 📐 Schema or reason-code change
+description: Propose a change to a schema in schemas/ or to the reason-code registry.
+title: "[Spec]: "
+labels: ["spec", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Schemas here are **proposals** that make the whitepaper testable. If your change is really about what the standard should say, start in the [whitepaper Discussions](https://github.com/OpenTokenizedAssetStandard/whitepaper/discussions) and link it below.
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Which artifact?
+      multiple: true
+      options:
+        - reasons-v1.json (reason-code registry)
+        - manifest.schema.json (capability manifest)
+        - events.schema.json (canonical events)
+        - settlement.schema.json (settlement instruction)
+        - core-descriptor.schema.json (asset metadata)
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options:
+        - Additive (new optional field, new code, new enum value)
+        - Clarifying (descriptions only, no validation change)
+        - Breaking (changes what currently validates)
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: The concrete change. A JSON snippet is ideal.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why, with the whitepaper section or discussion it comes from.
+    validations:
+      required: true
+  - type: textarea
+    id: conformance
+    attributes:
+      label: Conformance impact
+      description: Which vectors must be added or updated, and do both rails enforce it the same way?
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Registry rules
+      options:
+        - label: No existing reason code is removed or renumbered (deprecate instead).
+          required: true

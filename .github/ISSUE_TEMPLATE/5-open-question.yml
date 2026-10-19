@@ -1,0 +1,31 @@
+name: ❓ Open question
+description: A design question this repository surfaced and has not settled.
+title: "[Open question]: "
+labels: ["open-question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about what the standard should specify belong in the [whitepaper Discussions](https://github.com/OpenTokenizedAssetStandard/whitepaper/discussions). Use this template when building or running the code here raised the question.
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where it shows up
+      description: The component, run output, or code where the question becomes concrete.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considered
+  - type: input
+    id: section
+    attributes:
+      label: Related whitepaper section
+      placeholder: "§6.1 Finality: technical and legal"

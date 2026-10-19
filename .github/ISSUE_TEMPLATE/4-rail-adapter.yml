@@ -1,0 +1,51 @@
+name: 🔗 Rail adapter
+description: Add or extend support for a ledger (Solana, Fabric / Panurus, Besu, Corda, …).
+title: "[Rail]: "
+labels: ["rail-adapter", "help wanted"]
+body:
+  - type: input
+    id: rail
+    attributes:
+      label: Ledger
+      placeholder: "Solana Token-2022"
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: Accounting model
+      options:
+        - Account / balance
+        - Object
+        - UTXO
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: binding
+    attributes:
+      label: Where compliance binds natively
+      description: Which native mechanism would `canTransfer` bind to (whitepaper §5.3 and §6.3)?
+      placeholder: "Transfer hook program invoked on every transfer"
+    validations:
+      required: true
+  - type: textarea
+    id: exclusions
+    attributes:
+      label: Known exclusions or limits
+      description: Behaviour combinations this rail cannot support, or properties not observable from chain state.
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Proposed scope
+      options:
+        - Simulated adapter + passing conformance vectors
+        - Simulated adapter, vectors, and live contracts
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to work on this.

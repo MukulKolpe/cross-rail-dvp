@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions about the standard itself
+    url: https://github.com/OpenTokenizedAssetStandard/whitepaper/discussions
+    about: What OTAS should specify is discussed in the whitepaper Discussions. Use issues here for OTAS Cross-Rail DvP.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/OpenTokenizedAssetStandard/cross-rail-dvp/security/advisories/new
+    about: Please report vulnerabilities privately, not in a public issue.

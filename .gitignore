@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Written by the simulated demo on every run
+demo/event_log.json
+
+# Live runner: dependencies, private keys and run output
+live/runner/node_modules/
+live/runner/.keys/
+live/runner/out/
+live/runner/deployments/local*.json
+live/runner/deployments/credentials.*.json
+
+# Foundry
+live/evm/out/
+live/evm/cache/
+
+# Sui
+live/sui/otas_live/build/
+live/sui/Pub.localnet.toml
+live/.local/
+
+# OS
+.DS_Store

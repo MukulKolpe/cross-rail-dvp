@@ -1,0 +1,77 @@
+name: 🐛 Bug report
+description: Something in this repository doesn't work as documented.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Never paste private keys** or the contents of `live/runner/.keys/`.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Schemas / reason registry
+        - Conformance vectors or Python tools
+        - Simulated demo
+        - EVM contracts (live/evm)
+        - Sui Move package (live/sui)
+        - Live runner (live/runner)
+        - Scripts or CI
+        - Documentation
+    validations:
+      required: true
+  - type: dropdown
+    id: network
+    attributes:
+      label: Where did it happen?
+      options:
+        - Not network-related
+        - Simulated demo
+        - Local nodes (anvil + Sui localnet)
+        - Ethereum Sepolia × Sui testnet
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the exact error or the output that looks wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      render: shell
+      placeholder: |
+        cd live/runner
+        npm run demo -- --network testnet
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Transaction links
+      description: For live runs, Etherscan or Suiscan links for the failing step help a lot.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: "commit abc1234 · macOS 15 · node 22 · python 3.12 · forge 1.5.1 · sui 1.82.1"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: This report contains no private keys or other secrets.
+          required: true

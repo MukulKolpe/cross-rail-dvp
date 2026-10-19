@@ -1,0 +1,40 @@
+name: 🧪 Conformance vector
+description: Propose a rail-neutral test vector — the same fixture must produce the same reason code on every rail.
+title: "[Vector]: "
+labels: ["conformance"]
+body:
+  - type: input
+    id: under-test
+    attributes:
+      label: Behaviour or reason code under test
+      placeholder: "LOCKUP_ACTIVE (22)"
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Fixture
+      description: In the shape of conformance/vectors.json.
+      render: json
+      placeholder: |
+        {"id": "V07-lockup-active", "rails": ["evm-account", "sui-object"],
+         "setup": {"eligible": ["alice", "bob"], "balances": {"alice": 100}},
+         "op": {"from": "alice", "to": "bob", "amount": 10}, "expect": "LOCKUP_ACTIVE"}
+    validations:
+      required: true
+  - type: checkboxes
+    id: rails
+    attributes:
+      label: Rails this applies to
+      options:
+        - label: evm-account
+        - label: sui-object
+        - label: solana-account
+        - label: utxo-dag
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What would a non-conformant implementation get wrong?
+    validations:
+      required: true

@@ -1,0 +1,27 @@
+name: ⚙️ Repository / tooling
+description: CI, scripts, build, developer experience, or repository docs.
+title: "[Tooling]: "
+labels: ["tooling"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - CI workflows
+        - Build scripts
+        - Live runner developer experience
+        - Repository documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What and why
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
